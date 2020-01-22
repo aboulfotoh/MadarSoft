@@ -19,7 +19,7 @@ class UserViewModel(application: Application):AndroidViewModel(application) {
         // the correct WordRepository.
         val userDao = MadarSoftDatabase.getDatabase(application,viewModelScope).userDao()
         repository = UserRepository(userDao)
-        allUsers = repository.allWords
+        allUsers = repository.allUsers
     }
 
     fun insert(user: User) = viewModelScope.launch {
